@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taro Milk Cafe | A Little Cup of Happiness</title>
+  <meta name="description" content="Nikmati taro milk dan minuman manis favoritmu di Taro Milk Cafe.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --purple: #9270b8;
+      --dark: #49345d;
+      --pink: #f6dce9;
+      --cream: #fffaf3;
+      --white: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 8%;
+      background: rgba(255, 250, 243, 0.96);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 3px 15px #49345d0d;
+    }
+
+    .logo {
+      font-size: 21px;
+      font-weight: 800;
+      color: var(--purple);
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--dark);
+      margin-left: 22px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    nav a:hover { color: var(--purple); }
+
+    .hero {
+      min-height: 570px;
+      padding: 75px 8%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      background: linear-gradient(135deg, #f8e8f1, #e7dcf7);
+    }
+
+    .hero-text { max-width: 550px; }
+
+    .tag {
+      display: inline-block;
+      background: white;
+      color: var(--purple);
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(36px, 5vw, 60px);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    h1 span { color: var(--purple); }
+
+    .hero p {
+      font-size: 15px;
+      line-height: 1.9;
+      color: #705f7d;
+      margin-bottom: 28px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--purple);
+      color: white;
+      padding: 14px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 13px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: var(--dark);
+      transform: translateY(-3px);
+    }
+
+    .hero-image {
+      width: min(42%, 420px);
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      border-radius: 48% 48% 25px 25px;
+      border: 9px solid #ffffffa8;
+      box-shadow: 0 20px 45px #49345d20;
+    }
+
+    section { padding: 80px 8%; }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title h2 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #887995;
+      font-size: 14px;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .menu-card {
+      background: white;
+      padding: 15px;
+      border-radius: 22px;
+      box-shadow: 0 8px 25px #49345d0b;
+      transition: 0.3s;
+    }
+
+    .menu-card:hover { transform: translateY(-6px); }
+
+    .menu-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 16px;
+    }
+
+    .menu-card h3 {
+      font-size: 17px;
+      margin: 15px 0 5px;
+    }
+
+    .menu-card p {
+      font-size: 12px;
+      line-height: 1.7;
+      color: #887995;
+    }
+
+    .price {
+      color: var(--purple);
+      font-size: 17px;
+      font-weight: 800;
+      margin-top: 12px;
+    }
+
+    .about {
+      background: #eee5f7;
+      text-align: center;
+    }
+
+    .about-content {
+      max-width: 650px;
+      margin: auto;
+    }
+
+    .about-content p {
+      color: #705f7d;
+      line-height: 2;
+      font-size: 14px;
+      margin-bottom: 25px;
+    }
+
+    .contact {
+      text-align: center;
+      background: var(--cream);
+    }
+
+    .contact p {
+      color: #887995;
+      margin-bottom: 25px;
+      font-size: 14px;
+    }
+
+    footer {
+      padding: 25px 8%;
+      text-align: center;
+      color: white;
+      background: var(--dark);
+      font-size: 12px;
+    }
+
+    @media (max-width: 700px) {
+      nav { padding: 17px 5%; }
+      .logo { font-size: 17px; }
+      nav a { margin-left: 10px; font-size: 11px; }
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 55px 6%;
+      }
+      .hero-image { width: 85%; max-width: 330px; }
+      section { padding: 60px 6%; }
+      .menu-grid { grid-template-columns: 1fr; }
+      .menu-card img { height: 250px; }
+      .section-title h2 { font-size: 27px; }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="logo">☁ Taro Milk Cafe</div>
+    <div>
+      <a href="#home">Home</a>
+      <a href="#menu">Menu</a>
+      <a href="#about">About</a>
+    </div>
+  </nav>
+
+  <header class="hero" id="home">
+    <div class="hero-text">
+      <span class="tag">♡ Sweet, creamy, lovely!</span>
+      <h1>A Little Cup of <span>Happiness</span></h1>
+      <p>
+        Selamat datang di Taro Milk Cafe! Temukan rasa taro
+        yang lembut, manis, dan creamy dalam setiap tegukan.
+        Dibuat spesial untuk menemani hari terbaikmu.
+      </p>
+      <a class="btn" href="#menu">Explore Our Menu ♡</a>
+    </div>
+
+    <img class="hero-image"
+      src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=800&q=85"
+      alt="Minuman spesial di Taro Milk Cafe">
+  </header>
+
+  <section id="menu">
+    <div class="section-title">
+      <h2>Our Sweet Menu ♡</h2>
+      <p>Made with love, served with happiness.</p>
+    </div>
+
+    <div class="menu-grid">
+      <article class="menu-card">
+        <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=600&q=80"
+          alt="Taro milk">
+        <h3>💜 Classic Taro Milk</h3>
+        <p>Susu creamy dengan rasa taro yang lembut dan manis.</p>
+        <div class="price">Rp18.000</div>
+      </article>
+
+      <article class="menu-card">
+        <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=600&q=80"
+          alt="Iced milk drink">
+        <h3>🧋 Taro Boba Milk</h3>
+        <p>Taro milk favorit dengan topping boba kenyal.</p>
+        <div class="price">Rp22.000</div>
+      </article>
+
+      <article class="menu-card">
+        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=80"
+          alt="Sweet cake">
+        <h3>🍰 Sweet Berry Cake</h3>
+        <p>Kue lembut yang cocok untuk teman minum taro.</p>
+        <div class="price">Rp25.000</div>
+      </article>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="about-content">
+      <div class="section-title">
+        <h2>A Little About Us 💜</h2>
+      </div>
+      <p>
+        Taro Milk Cafe adalah tempat kecil dengan cinta yang besar
+        untuk minuman manis. Kami percaya bahwa secangkir minuman
+        yang enak bisa membuat hari terasa lebih indah.
+        Datang untuk menikmati rasa, pulang membawa kebahagiaan!
+      </p>
+      <a class="btn" href="#contact">Visit Us ♡</a>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="section-title">
+      <h2>Let's Get Something Sweet!</h2>
+    </div>
+    <p>Punya pertanyaan atau ingin memesan menu favoritmu?</p>
+    <a class="btn" id="orderBtn" href="#">Order via WhatsApp ☁</a>
+  </section>
+
+  <footer>
+    <p>© <span id="year"></span> Taro Milk Cafe · Made with ♡ and taro</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    // Ganti dengan nomor WhatsApp tokomu.
+    const nomorWhatsApp = "6281234567890";
+    const pesan = "Halo Taro Milk Cafe! Saya ingin memesan menu.";
+
+    document.getElementById("orderBtn").href =
+      "https://wa.me/" + nomorWhatsApp +
+      "?text=" + encodeURIComponent(pesan);
+  </script>
+</body>
+</html>
